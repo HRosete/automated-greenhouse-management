@@ -1,0 +1,15 @@
+[project]
+name = "automated-greenhouse-management"  # Replace with your preferred project name
+version = "0.1.0"
+description = "Collects sensor data from Arduino and logs it to MySQL database"
+requires-python = ">=3.6"
+
+[project.scripts]
+arduino-logger = "automated-greenhouse-management:master"  # Entry point for running the script
+
+[build-system]
+requires = ["setuptools", "wheel"]  # Dependencies for building the package
+
+[dependencies]
+serial = ">=3.4"
+mysql-connector-python = "^8.0"  # Use the recommended MySQL Connector/Python
