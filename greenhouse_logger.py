@@ -1,7 +1,7 @@
 import serial
-import MySQLdb
+import mysql-connector-python
 
-dbConn = MySQLdb.connect("localhost", "root", "raspbian", "thesis")  # Removed "or die" for clarity
+dbConn = mysql-connector-python.connect("localhost", "root", "raspbian", "thesis")  # Removed "or die" for clarity
 cursor = dbConn.cursor()
 
 device = "/dev/ttyUSB0"
@@ -26,7 +26,7 @@ try:
         """, pieces)  # F-string for cleaner formatting
         dbConn.commit()
 
-except MySQLdb.IntegrityError:
+except mysql-connector-python.IntegrityError:
     print("Failed to insert data")
 
 except KeyboardInterrupt:
